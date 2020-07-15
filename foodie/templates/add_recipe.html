@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie - Add Recipe</title>
+</head>
+
+<body>
+    <form action="/recipe/add" method="post">
+        <ul>
+            <li>
+                <label for="name">Recipe Name:</label>
+                <input type="text" id="name" name="recipe_name">
+            </li>
+            <li>
+                <label for="ingredients">Ingredients:</label>
+                <ul>
+                    <li>
+                        <input type="text" id="ingredients" name="ingredients">
+                        <input type="text" id="ingredient_qty_0" name="ingredient_qty">
+                        <select name="qty_type" id="qty_type_0">
+                            <option value="tsp">tsp</option>
+                            <option value="tbsp">tbsp</option>
+                            <option value="cup">cup</option>
+                            <option value="oz">oz</option>
+                            <option value="lb">lb</option>
+                            <option value="count">count</option>
+                            <option value="fluid oz">fluid oz</option>
+                          </select>
+                    </li>
+                    <li>
+                        <input type="text" id="ingredients" name="ingredients">
+                        <input type="text" id="ingredient_qty_1" name="ingredient_qty">
+                        <select name="qty_type" id="qty_type_0">
+                            <option value="tsp">tsp</option>
+                            <option value="tbsp">tbsp</option>
+                            <option value="cup">cup</option>
+                            <option value="oz">oz</option>
+                            <option value="lb">lb</option>
+                            <option value="count">count</option>
+                            <option value="fluid oz">fluid oz</option>
+                          </select>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <label for="instructions">Instructions:</label>
+                <textarea id="instructions" name="instructions"></textarea>
+            </li>
+            <li class="button">
+                <button type="submit">Submit</button>
+            </li>
+        </ul>
+    </form>
+</body>
+
+</html>
