@@ -3,24 +3,31 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Foodie - Add Recipe</title>
 </head>
 
 <body>
-    <form action="/recipe/add" method="post">
-        <ul>
-            <li>
-                <label for="name">Recipe Name:</label>
-                <input type="text" id="name" name="recipe_name">
-            </li>
-            <li>
-                <label for="ingredients">Ingredients:</label>
-                <ul>
-                    <li>
-                        <input type="text" id="ingredients" name="ingredients">
-                        <input type="text" id="ingredient_qty_0" name="ingredient_qty">
-                        <select name="qty_type" id="qty_type_0">
+    <div class="container">
+        <h2>Add another of your sweet, savory, spicy, dicey recipes!</h2>
+        <form  action="/recipe/add" method="post">
+            <div class="form-group">
+                <label for="recipe_name">Recipe Name</label>
+                <input type="text" class="form-control" id="recipe_name" placeholder="Recipe Name">
+            </div>
+            <div class="form-group">
+                <label for="ingredient_name0">Ingredients</label>
+                <div class="form-row my-2">
+                    <div class="col">
+                        <input type="text" class="form-control" id="ingredient_name0" placeholder="Ingredient Name">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" id="ingredient_qty0" placeholder="Quantity">
+                    </div>
+                    <div class="col">
+                        <select class="custom-select" id="inlineFormCustomSelect">
+                            <option selected>Units...</option>
                             <option value="tsp">tsp</option>
                             <option value="tbsp">tbsp</option>
                             <option value="cup">cup</option>
@@ -28,12 +35,19 @@
                             <option value="lb">lb</option>
                             <option value="count">count</option>
                             <option value="fluid oz">fluid oz</option>
-                          </select>
-                    </li>
-                    <li>
-                        <input type="text" id="ingredients" name="ingredients">
-                        <input type="text" id="ingredient_qty_1" name="ingredient_qty">
-                        <select name="qty_type" id="qty_type_0">
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row my-2">
+                    <div class="col">
+                        <input type="text" class="form-control" id="ingredient_name0" placeholder="Ingredient Name">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" id="ingredient_qty0" placeholder="Quantity">
+                    </div>
+                    <div class="col">
+                        <select class="custom-select" id="inlineFormCustomSelect">
+                            <option selected>Units...</option>
                             <option value="tsp">tsp</option>
                             <option value="tbsp">tbsp</option>
                             <option value="cup">cup</option>
@@ -41,19 +55,40 @@
                             <option value="lb">lb</option>
                             <option value="count">count</option>
                             <option value="fluid oz">fluid oz</option>
-                          </select>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <label for="instructions">Instructions:</label>
-                <textarea id="instructions" name="instructions"></textarea>
-            </li>
-            <li class="button">
-                <button type="submit">Submit</button>
-            </li>
-        </ul>
-    </form>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row my-2">
+                    <div class="col">
+                        <input type="text" class="form-control" id="ingredient_name0" placeholder="Ingredient Name">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" id="ingredient_qty0" placeholder="Quantity">
+                    </div>
+                    <div class="col">
+                        <select class="custom-select" id="inlineFormCustomSelect">
+                            <option selected>Units...</option>
+                            <option value="tsp">tsp</option>
+                            <option value="tbsp">tbsp</option>
+                            <option value="cup">cup</option>
+                            <option value="oz">oz</option>
+                            <option value="lb">lb</option>
+                            <option value="count">count</option>
+                            <option value="fluid oz">fluid oz</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+              <label for="instructions">Instructions</label>
+              <textarea class="form-control" id="instructions" rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 
 </html>
