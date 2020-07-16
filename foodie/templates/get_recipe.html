@@ -3,9 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodie - Recipe {{recipe_id}}</title>
+    <title>Foodie - Recipe {{recipe.name}}</title>
 </head>
 <body>
-    <p>Welcome the page for recipe {{recipe_id}}</p>
+    <h2>{{recipe.name}}</h2>
+    <ul>
+        {% for ingredient_qty in recipe.ingredients %}
+        <li>
+            {{ingredient_qty.ingredient.name}}: {{ingredient_qty.quantity}} {{ingredient_qty.quantity_type.value}}
+        </li>
+        {% endfor %}
+    </ul>
+    <p>
+        {{recipe.instructions}}
+    </p>
 </body>
 </html>

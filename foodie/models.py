@@ -14,7 +14,7 @@ class Ingredient(db.Model):
     ''' A table of ingredients. This is used to create unique ingredients that can be deduplicated in a grocery list.'''
     __tablename__ = "ingredient"
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String())
+    name = db.Column(db.String(), unique=True, nullable=False)
 
 class IngredientQuantity(db.Model):
     '''
