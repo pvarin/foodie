@@ -12,7 +12,6 @@ function add_item(){
 
     // Insert is after the last element.
     dynamic_list.insertBefore(new_element, list_items[list_items.length-1].nextSibling);
-
 }
 
 function remove_item(event){

@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodie - Recipe {{recipe.name}}</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}- Recipe {{recipe.name}}{% endblock %}
+
+{% block container %}
     <h2>{{recipe.name}}</h2>
+    <h3>Ingredients</h3>
     <ul>
         {% for ingredient_qty in recipe.ingredients %}
         <li>
@@ -14,8 +12,10 @@
         </li>
         {% endfor %}
     </ul>
+    <h3>Instructions</h3>
+    {% for line in recipe.instructions.split('\n') %}
     <p>
-        {{recipe.instructions}}
+        {{line}}
     </p>
-</body>
-</html>
+{% endfor %}
+{% endblock %}

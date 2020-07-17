@@ -62,6 +62,6 @@ def add_recipe():
         
         return redirect(url_for('get_recipe', recipe_id=recipe.id))
 
-@app.route('/list/create')
-def create_list():
-    return 'create a list on this page'
+@app.route('/list')
+def user_list():
+    return render_template("list.html", recipes=db.session.query(Recipe).all())

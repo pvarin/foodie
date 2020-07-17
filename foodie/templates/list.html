@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}- List{% endblock %}
+
+{% block container %}
+<h2>Recipe List</h2>
+    {% for recipe in recipes %}
+    <div class="row">
+        <div class="col-4">
+            <a href="{{url_for('get_recipe', recipe_id=recipe.id)}}"></a>{{recipe.name}}
+        </div>
+        <div class="col-1"> 
+            <button class="btn btn-danger" type="button">x</button>
+        </div>
+    </div>
+    {% endfor %}
+<h2>Grocery List</h2>
+<ul>
+{% for recipe in recipes %}    
+{% for ingredient_qty in recipe.ingredients %}
+    <li>{{ingredient_qty.ingredient.name}}: {{ingredient_qty.quantity}} {{ingredient_qty.quantity_type.value}}</li>
+{% endfor %}
+{% endfor %}
+</ul>
+{% endblock %}
