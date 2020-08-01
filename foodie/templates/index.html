@@ -1,14 +1,22 @@
 {% extends "base.html" %}
 
 {% block container %}
-<div class="row align-items-center justify-content-center">
-    <div class="col-10">
-        <h1 class="my-5" style="text-align:center">Welcome to Foodie!</h1>
+<!-- <style>
+    body{
+        background-size: cover;
+        background-image: url({{url_for('static', filename='board-bunch-cooking-food-349609.jpg')}});
+    }
+</style> -->
+
+    <div class="row align-items-center justify-content-center">
+        <div class="col-8">
+            <h1 class="my-5" style="text-align:center">Welcome to Foodie!</h1>
+        </div>
     </div>
-</div>
-<div class="row align-items-center justify-content-center">
-    <a href="{{url_for('add_recipe')}}" class="btn btn-outline-primary m-2">Add a Recipe</a>
-    <a href="{{url_for('list_recipes')}}" class="btn btn-outline-primary m-2">Browse Recipes</a>
-    <a href="{{url_for('user_list')}}" class="btn btn-outline-primary m-2">View Your Grocery List</a>
-</div>
+    <div class="row align-items-center justify-content-center">
+        <a href="{{url_for('recipes.add_recipe')}}" class="btn btn-outline-primary m-2">Add a Recipe</a>
+        <a href="{{url_for('recipes.list_recipes')}}" class="btn btn-outline-primary m-2">Browse Recipes</a>
+        <a href="{{url_for('recipes.user_list')}}" class="btn btn-outline-primary m-2">View Your Grocery List</a>
+    </div>
+
 {% endblock %}

@@ -7,7 +7,7 @@
     {% for recipe in recipes %}
     <div class="row">
         <div class="col-4">
-            <a href="{{url_for('get_recipe', recipe_id=recipe.id)}}"></a>{{recipe.name}}
+            <a href="{{url_for('recipes.get_recipe', recipe_id=recipe.id)}}"></a>{{recipe.name}}
         </div>
         <div class="col-1"> 
             <button class="btn btn-danger" type="button">x</button>
@@ -18,7 +18,7 @@
 <ul>
 {% for recipe in recipes %}    
 {% for ingredient_qty in recipe.ingredients %}
-    <li>{{ingredient_qty.ingredient.name}}: {{ingredient_qty.quantity}} {{ingredient_qty.quantity_type.value}}</li>
+    <li>{{ingredient_qty.ingredient.name}}: {{ingredient_qty.quantity}}</li>
 {% endfor %}
 {% endfor %}
 </ul>

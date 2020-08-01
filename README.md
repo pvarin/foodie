@@ -10,6 +10,6 @@ createdb foodie_dev
 
 Create the tables in the python interactive shell
 ```python
-from foodie import db
+from foodie.database import db
 db.create_all()
 ```

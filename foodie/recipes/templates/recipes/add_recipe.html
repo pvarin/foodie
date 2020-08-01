@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}- Add Recipe{% endblock %}
+
+{% block head_scripts %}
+<script src="{{url_for('.static', filename='js/add_recipe.js')}}"></script>
+{% endblock %}
+
+{% block container %}
+        <h2 class="text-center">Add another of your sweet, savory, spicy, dicey recipes!</h2>
+        <form  action="{{url_for('recipes.add_recipe')}}" method="post" class="mx-2 mt-3">
+            <div class="form-group">
+                <label for="recipe_name">Recipe Name</label>
+                <input type="text" class="form-control" id="recipe_name" name="recipe_name" placeholder="Recipe Name">
+            </div>
+            <div class="form-group">
+                <label for="recipe_photo">Photo</label>
+                <input type="file" class="form-control-file" id="recipe_photo" name="recipe_photo">
+            </div>
+            <div class="form-group">
+                <label for="recipe_url">URL</label>
+                <input type="text" class="form-control" name="url" placeholder="URL (Optional)">
+            </div>
+            <div class="form-group" id="dynamic_list">
+                <label for="ingredient_name0">Ingredients</label>
+                <div class="form-row my-2 dynamic-list-item" id="dynamic_list_item_1">
+                    <div class="col">
+                        <input type="text" class="form-control" id="ingredient_name0" name="ingredient_name" placeholder="Ingredient Name">
+                    </div>
+                    <div class="col-4">
+                        <input type="text" class="form-control" id="ingredient_qty0" name="ingredient_qty" placeholder="Quantity">
+                    </div>
+                    <div class="col-1">
+                        <button class="btn btn-danger" onclick="remove_item(this);" type="button">x</button>
+                    </div>
+                </div>
+                <div class="form-row my-2" id="add_item_button">
+                    <div class="col-1">
+                        <button onclick="add_item()" class="btn btn-success" type="button">Add Item</button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+              <label for="instructions">Instructions</label>
+              <textarea class="form-control" id="instructions" name="recipe_instructions" rows="7"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+{% endblock %}
+</html>

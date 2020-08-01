@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}- Recipe List{% endblock %}
+
+{% block container %}
+    <h2 class="text-center mb-5">Recipes</h2>
+    {% if recipes|length > 0 %}
+        {% for recipe in recipes %}
+        <div class='row ml-3 my-2'>
+            <div class='col my-1'>
+                <a href='{{url_for("recipes.get_recipe", recipe_id=recipe.id)}}'>{{recipe.name}}</a>
+            </div>
+            <div class='col-sm-3'>
+                <a class='btn btn-outline-danger' href='{{url_for("recipes.delete_recipe", recipe_id=recipe.id)}}'>Delete</a>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+    <div class='row ml-3 my-2'>
+        <p>Sorry, it seems as if there are no recipes yet...</p>
+        <p>Maybe you could add one!</p>
+    </div>
+    {% endif %}
+    <div class='row ml-3 my-2'>
+        <a href='{{url_for("recipes.add_recipe")}}' class="mx-auto btn btn-success">Add Recipe</a>
+    </div>
+{% endblock %}  

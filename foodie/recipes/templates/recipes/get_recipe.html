@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}- Recipe {{recipe.name}}{% endblock %}
+
+{% block container %}
+    <h2 class="text-center py-2">{{recipe.name}}</h2>
+    <div class="row px-5 py-3">
+        <div class="col-md-4">
+            <h3 class="py-3">Ingredients</h3>
+            <ul class="list-group">
+                {% for ingredient_qty in recipe.ingredients %}
+                <li class="list-group-item">
+                    {{ingredient_qty.quantity}} {{ingredient_qty.ingredient.name}}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col">
+            <h3 class="py-3">Instructions</h3>
+            {% for line in recipe.instructions.split('\n') %}
+            <p>
+                {{line}}
+            </p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
